@@ -2,10 +2,8 @@
   <img src="Header-Photoroom.png" alt="Willem Adnet. A passionnate develooper from Grenoble aspiring to become a skilled full-stack developer. "/>
 </p>
 
-<!-- [![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=800&color=FFFFFF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet;Studying+%F0%9F%93%96+at++ENSIMAG;Loves+persona+projects+%F0%9F%92%BB)](https://git.io/typing-svg) -->
-
 <h1 align="center" style="width: 100%; text-align: center;">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=FFFFFF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet;Studying+%F0%9F%93%96+at++ENSIMAG;Loves+persona+projects+%F0%9F%92%BB" alt="Typing animation"/>
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=FFFFFF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet,+22;%F0%9F%93%96+Currently+studying+at+ENSIMAG;%F0%9F%92%BB+Loves+persona+projects;🤩+Open+to+work+into+new+projects" alt="Typing animation"/>
 </h1>
 
 
