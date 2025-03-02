@@ -1,4 +1,6 @@
-<img src="Header-Photoroom.png" alt="Header"/>
+<img src="Header-Photoroom.png" alt="Willem Adnet. A passionnate develooper from Grenoble aspiring to become a skilled full-stack developer. "/>
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=FFFFFF&width=435&lines=Hi%2C+I'm+Willem+)](https://git.io/typing-svg)
 
 <h2 align="center">🚀 Languages and Tools I Use</h2>
 <p align="center">
