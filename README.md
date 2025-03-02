@@ -1,5 +1,5 @@
 <h1 align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?lines=Hi 👋;I'm Willem Adnet&center=true&width=500&height=50&color=FFFFFF">
+  Hi 👋, I'm Willem Adnet
 </h1>
 <p align="center">A passionate developer from Grenoble who wants to be full-stack developer</p>
 
@@ -68,16 +68,13 @@
 </p>
 
 
-<!-- <p align="center">
+<p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vlor999/Vlor999/output/github-snake-dark.svg" />
     <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Vlor999/Vlor999/output/github-snake.svg" />
     <img alt="GitHub Snake" src="https://raw.githubusercontent.com/Vlor999/Vlor999/output/github-snake.svg"/>
   </picture>
-</p> -->
-
-## 🎮 Interactive Commit Particles  
-[![View Animation](https://img.shields.io/badge/Live%20Demo-Click%20Here-blue)](https://Vlor999.github.io/animation/)
+</p>
 
 
 <p align="center">
