@@ -2,7 +2,7 @@
   <img src="Header-Photoroom.png" alt="Willem Adnet. A passionnate develooper from Grenoble aspiring to become a skilled full-stack developer. "/>
 </p>
 
-[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=700&color=FFFFFF&center=true&vCenter=true&multiline=true&width=600&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet;Studying+%F0%9F%93%96+at++ENSIMAG;Loves+personal+projects+%F0%9F%92%BB)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=800&color=FFFFFF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet;Studying+%F0%9F%93%96+at++ENSIMAG;Loves+persona+projects+%F0%9F%92%BB)](https://git.io/typing-svg)
 
 <h2 align="center">🚀 Languages and Tools I Use</h2>
 <p align="center">
