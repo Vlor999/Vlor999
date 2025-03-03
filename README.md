@@ -6,25 +6,6 @@
   <img id="typing-animation" src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=000000&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet,+22;%F0%9F%93%96+Currently+studying+at+ENSIMAG;%F0%9F%92%BB+Loves+persona+projects;🤩+Open+to+work+into+new+projects" alt="Typing animation"/>
 </h1>
 
-<script>
-  function setImageBasedOnTheme() {
-    const imgElement = document.getElementById('typing-animation');
-    const lightModeImage = "https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=FFFFFF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet,+22;%F0%9F%93%96+Currently+studying+at+ENSIMAG;%F0%9F%92%BB+Loves+persona+projects;🤩+Open+to+work+into+new+projects";
-    const darkModeImage = "https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=000000&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet,+22;%F0%9F%93%96+Currently+studying+at+ENSIMAG;%F0%9F%92%BB+Loves+persona+projects;🤩+Open+to+work+into+new+projects";
-
-    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      imgElement.src = darkModeImage;
-    } else {
-      imgElement.src = lightModeImage;
-    }
-  }
-
-  setImageBasedOnTheme();
-
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', setImageBasedOnTheme);
-</script>
-
-
 
 <h2 align="center">🚀 Languages and Tools I Use</h2>
 <p align="center">
