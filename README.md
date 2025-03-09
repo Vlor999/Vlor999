@@ -12,6 +12,9 @@
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/c/c-original.svg" alt="C" width="42" height="42"/>
   </a>
+  <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg">
+  <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="42" height="42" />
+  </a>
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg">
     <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" alt="Swift" width="42" height="42"/>
   </a>
