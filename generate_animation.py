@@ -24,10 +24,12 @@ for i, week in enumerate(weeks):
 
 # Générer le SVG
 SVG_WIDTH, SVG_HEIGHT = 800, 150
-CELL_SIZE = 15
+CELL_SIZE = 10
+CELL_SPACING = 2
 ANIMATION_DURATION = 3  # secondes
 
 svg = f'<svg width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" xmlns="http://www.w3.org/2000/svg">\n'
+svg += '<rect width="100%" height="100%" fill="#ffffff" />\n'  # Fond blanc
 
 for cell in cells:
     intensity = int((cell["count"] / max_contributions) * 255) if max_contributions > 0 else 0
@@ -36,7 +38,7 @@ for cell in cells:
     delay = cell["x"] * 0.1 + cell["y"] * 0.1  # Décalage progressif de l'animation
 
     svg += f'''
-    <rect x="{cell["x"] * CELL_SIZE}" y="{cell["y"] * CELL_SIZE}" width="{CELL_SIZE}" height="{CELL_SIZE}"
+    <rect x="{cell["x"] * (CELL_SIZE + CELL_SPACING)}" y="{cell["y"] * (CELL_SIZE + CELL_SPACING)}" width="{CELL_SIZE}" height="{CELL_SIZE}"
           fill="{color}">
         <animate attributeName="opacity" from="0" to="1" dur="{ANIMATION_DURATION}s" begin="{delay}s" fill="freeze"/>
     </rect>
