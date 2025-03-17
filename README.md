@@ -57,6 +57,15 @@
   </a>
 </p>
 
+<h2 align="center">📊 My GitHub Contributions</h2>
+<p align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vlor999/Vlor999/main/contribution_animation.svg" />
+    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Vlor999/Vlor999/main/contribution_animation.svg" />
+    <img alt="GitHub Contribution Animation" src="https://raw.githubusercontent.com/Vlor999/Vlor999/main/contribution_animation.svg" width="100%"/>
+  </picture>
+</p>
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://github-readme-streak-stats.herokuapp.com/?user=Vlor999&theme=dark" />
@@ -64,7 +73,6 @@
     <img src="https://github-readme-streak-stats.herokuapp.com/?user=Vlor999&theme=white" alt="GitHub Streak"/>
   </picture>
 </p>
-
 
 <p align="center">
   <picture>
@@ -74,7 +82,6 @@
   </picture>
 </p>
 
-
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Vlor999/Vlor999/output/github-snake-dark.svg" />
@@ -83,10 +90,6 @@
   </picture>
 </p>
 
-
 <p align="center">
   <a href="https://icons8.com/icon/3cCrxzZF7LfB/swiftui">SwiftUI</a> icon by <a href="https://icons8.com">Icons8</a>
 </p>
-
-![Animation des contributions](https://raw.githubusercontent.com/Vlor999/Vlor999/main/contribution_animation.svg)
-
