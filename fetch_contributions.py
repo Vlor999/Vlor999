@@ -1,7 +1,9 @@
 import requests
 import json
+import os
 
 GITHUB_USERNAME = "Vlor999"
+TOKEN_GH = os.getenv("TOKEN_GH")
 
 GRAPHQL_URL = "https://api.github.com/graphql"
 
