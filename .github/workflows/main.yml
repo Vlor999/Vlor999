@@ -26,3 +26,16 @@ jobs:
         env:
           TOKEN_GH: ${{ secrets.TOKEN_GH }}
         run: python fetch_contributions.py
+
+      - name: Generate animation
+        run: python generate_animation.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git add contribution_animation.svg
+          git commit -m "Update contribution animation"
+          git push
+        env:
+          TOKEN_GH: ${{ secrets.GITHUB_TOKEN }}
