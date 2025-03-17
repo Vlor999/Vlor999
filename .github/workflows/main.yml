@@ -1,0 +1,28 @@
+name: Fetch Contributions
+
+on:
+  push:
+    branches:
+      - main
+  schedule:
+    - cron: '0 0 * * *'
+
+jobs:
+  fetch-contributions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Fetch contributions
+        env:
+          TOKEN_GH: ${{ secrets.TOKEN_GH }}
+        run: python /Users/adnet/Desktop/Projets/Perso/ghPage/Vlor999/fetch_contributions.py
