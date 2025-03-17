@@ -5,6 +5,9 @@ import os
 GITHUB_USERNAME = "Vlor999"
 TOKEN_GH = os.getenv("TOKEN_GH")
 
+if not TOKEN_GH:
+    raise ValueError("❌ Erreur : Le token GitHub n'est pas défini ! Assure-toi de l'ajouter dans les Secrets GitHub.")
+
 GRAPHQL_URL = "https://api.github.com/graphql"
 
 query = """
