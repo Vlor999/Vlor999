@@ -1,0 +1,39 @@
+name: Update Contribution Animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *"  # Tous les jours à minuit
+  push:
+    branches:
+      - main
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloner le repo
+        uses: actions/checkout@v3
+
+      - name: Installer Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Installer les dépendances
+        run: pip install requests
+
+      - name: Récupérer les contributions GitHub
+        run: python fetch_contributions.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN_GH }}
+
+      - name: Générer l’animation SVG
+        run: python generate_animation.py
+
+      - name: Commit et push si modifié
+        run: |
+          git config --global user.name "GitHub Action"
+          git config --global user.email "github-actions@github.com"
+          git add .
+          git commit -m "Mise à jour de l'animation des contributions" || echo "Pas de modifications"
+          git push
