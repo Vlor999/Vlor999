@@ -28,8 +28,15 @@ CELL_SIZE = 10
 CELL_SPACING = 2
 ANIMATION_DURATION = 3  # secondes
 
-svg = f'<svg width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" xmlns="http://www.w3.org/2000/svg">\n'
-svg += '<rect width="100%" height="100%" fill="#ffffff" />\n'  # Fond blanc
+svg = f'''
+<svg width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .background-light {{ fill: #ffffff; }}
+    .background-dark {{ fill: #0d1117; }}
+  </style>
+  <rect width="100%" height="100%" class="background-light" />
+  <rect width="100%" height="100%" class="background-dark" />
+'''
 
 for cell in cells:
     intensity = int((cell["count"] / max_contributions) * 255) if max_contributions > 0 else 0
@@ -40,7 +47,7 @@ for cell in cells:
     svg += f'''
     <rect x="{cell["x"] * (CELL_SIZE + CELL_SPACING)}" y="{cell["y"] * (CELL_SIZE + CELL_SPACING)}" width="{CELL_SIZE}" height="{CELL_SIZE}"
           fill="{color}">
-        <animate attributeName="opacity" from="0" to="1" dur="{ANIMATION_DURATION}s" begin="{delay}s" fill="freeze"/>
+        <animate attributeName="opacity" from="0" to="1" dur="{ANIMATION_DURATION}s" begin="{delay}s" repeatCount="indefinite" fill="freeze"/>
     </rect>
     '''
 
