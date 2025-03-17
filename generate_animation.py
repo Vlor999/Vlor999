@@ -1,5 +1,5 @@
 import json
-import random
+import math
 
 # Charger les contributions
 with open("contributions.json") as f:
@@ -7,7 +7,7 @@ with open("contributions.json") as f:
 
 # Extraire les contributions
 weeks = data["data"]["user"]["contributionsCollection"]["contributionCalendar"]["weeks"]
-cells_map = {}  # Pour accéder facilement aux cellules par coordonnées
+cells_map = {}
 all_cells = []
 max_contributions = 0
 max_x = 0
@@ -28,20 +28,22 @@ for i, week in enumerate(weeks):
             "y": j,
             "count": count,
             "date": day["date"],
-            "original_count": count,  # Conserver la valeur originale
-            "is_original": count > 0  # Marquer si c'est une cellule originale avec contribution
+            "original_count": count,
+            "is_original": count > 0
         }
         cells_map[(i, j)] = cell
         all_cells.append(cell)
+
+# Trier les cellules par nombre de contributions pour l'animation
+cells_by_count = sorted(all_cells, key=lambda c: c["count"])
 
 # Paramètres améliorés
 SVG_WIDTH, SVG_HEIGHT = 890, 128
 CELL_SIZE = 10
 CELL_SPACING = 3
 BORDER_RADIUS = 2
-ANIMATION_DELAY_FACTOR = 0.05
-EXPANSION_ITERATIONS = 3  # Nombre d'itérations pour l'expansion
-EXPANSION_DELAY = 2  # Délai en secondes entre chaque itération
+ANIMATION_DURATION = 15  # secondes pour l'animation complète
+PULSE_DURATION = 1.5  # secondes pour chaque pulsation
 
 # Palette de couleurs GitHub
 GITHUB_COLORS = [
@@ -74,63 +76,7 @@ def get_color_level(count):
     else:
         return 4
 
-# Fonction pour obtenir les cellules voisines
-def get_neighbors(x, y):
-    neighbors = []
-    directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]  # Droite, bas, gauche, haut
-    for dx, dy in directions:
-        nx, ny = x + dx, y + dy
-        if (nx, ny) in cells_map:
-            neighbors.append(cells_map[(nx, ny)])
-    return neighbors
-
-# Calculer les propagations
-expansion_iterations = []
-for iteration in range(EXPANSION_ITERATIONS):
-    # Nouvelle liste pour cette itération
-    new_propagations = []
-    
-    # Pour la première itération, on commence avec les cellules originales
-    if iteration == 0:
-        for cell in all_cells:
-            if cell["is_original"]:
-                # Trouver les voisins de cette cellule qui n'ont pas de contribution
-                neighbors = get_neighbors(cell["x"], cell["y"])
-                for neighbor in neighbors:
-                    if neighbor["original_count"] == 0:  # Seulement propager vers les cellules vides
-                        # Ajouter à la liste de propagation pour cette itération
-                        propagation_value = max(1, cell["original_count"] // 2)  # Réduire l'intensité
-                        new_propagations.append({
-                            "x": neighbor["x"],
-                            "y": neighbor["y"],
-                            "count": propagation_value,
-                            "iteration": iteration + 1
-                        })
-    else:
-        # Pour les itérations suivantes, on utilise les cellules de l'itération précédente
-        prev_iteration = expansion_iterations[iteration - 1]
-        for prop in prev_iteration:
-            cell_coords = (prop["x"], prop["y"])
-            if cell_coords in cells_map:
-                neighbors = get_neighbors(prop["x"], prop["y"])
-                for neighbor in neighbors:
-                    # Ne propager que vers des cellules vides et qui n'ont pas encore été propagées
-                    if neighbor["original_count"] == 0 and not any(
-                        p["x"] == neighbor["x"] and p["y"] == neighbor["y"] 
-                        for i in range(iteration) 
-                        for p in expansion_iterations[i]
-                    ):
-                        propagation_value = max(1, prop["count"] // 2)  # Réduire encore l'intensité
-                        new_propagations.append({
-                            "x": neighbor["x"],
-                            "y": neighbor["y"],
-                            "count": propagation_value,
-                            "iteration": iteration + 1
-                        })
-    
-    expansion_iterations.append(new_propagations)
-
-# Début du SVG
+# Début du SVG avec style amélioré
 svg = f'''
 <svg width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" 
      xmlns="http://www.w3.org/2000/svg">
@@ -142,6 +88,7 @@ svg = f'''
       .contribution-2 {{ fill: {GITHUB_COLORS[2]}; }}
       .contribution-3 {{ fill: {GITHUB_COLORS[3]}; }}
       .contribution-4 {{ fill: {GITHUB_COLORS[4]}; }}
+      .contribution-text {{ fill: #24292f; }}
     }}
     @media (prefers-color-scheme: dark) {{
       .background {{ fill: #0d1117; }}
@@ -150,99 +97,116 @@ svg = f'''
       .contribution-2 {{ fill: {GITHUB_COLORS_DARK[2]}; }}
       .contribution-3 {{ fill: {GITHUB_COLORS_DARK[3]}; }}
       .contribution-4 {{ fill: {GITHUB_COLORS_DARK[4]}; }}
-    }}
-    .cell-original {{
-      filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+      .contribution-text {{ fill: #8b949e; }}
     }}
     .cell {{
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
     }}
     .cell:hover {{
-      transform: scale(1.1);
+      transform: scale(1.2);
     }}
   </style>
   <rect width="100%" height="100%" class="background" rx="6" ry="6"/>
+  
+  <!-- Définition des animations -->
+  <defs>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
 '''
 
-# Créer les cellules de base d'abord (toutes avec count=0)
+# Ajouter des animations réutilisables
+for i in range(5):  # Pour chaque niveau de contribution
+    svg += f'''
+    <animate id="pulse-{i}" attributeName="opacity" 
+      values="0.6;1;0.6" dur="{PULSE_DURATION}s" repeatCount="indefinite"/>
+    <animate id="scale-{i}" attributeName="transform" type="scale"
+      values="1;1.15;1" dur="{PULSE_DURATION}s" repeatCount="indefinite"
+      additive="sum"/>
+  '''
+
+svg += '''
+  </defs>
+  
+  <!-- Groupe pour l'animation de vague -->
+  <g id="wave-container">
+'''
+
+# Créer les cellules de base avec animation en vague
 for cell in all_cells:
     x_pos = cell["x"] * (CELL_SIZE + CELL_SPACING) + 40
     y_pos = cell["y"] * (CELL_SIZE + CELL_SPACING) + 10
+    color_level = get_color_level(cell["count"])
     
-    # Animation initiale pour toutes les cellules
-    delay = (cell["x"] + cell["y"]) * ANIMATION_DELAY_FACTOR
+    # Calculer le délai basé sur la distance depuis le coin supérieur gauche
+    # Cela crée un effet de vague à travers le graphique
+    distance = math.sqrt(cell["x"]**2 + cell["y"]**2)
+    delay_factor = distance / (max_x + max_y) * 2  # Normaliser entre 0 et 2
     
+    # Ajouter une séquence d'animations pour chaque cellule
     svg += f'''
-  <g class="cell" data-date="{cell["date"]}" data-count="{cell["original_count"]}">
+  <g class="cell" data-date="{cell["date"]}" data-count="{cell["count"]}">
     <rect id="cell-{cell["x"]}-{cell["y"]}" 
           x="{x_pos}" y="{y_pos}" 
           width="{CELL_SIZE}" height="{CELL_SIZE}"
           rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}" 
-          class="contribution-0">
+          class="contribution-{color_level}">
       <animate attributeName="opacity" 
-               from="0" to="1" 
-               dur="0.5s" 
-               begin="{delay}s" 
-               fill="freeze"/>
+               values="0;1;1" 
+               keyTimes="0;0.2;1"
+               dur="{ANIMATION_DURATION}s" 
+               begin="{delay_factor}s"
+               repeatCount="indefinite"/>
+      <animate attributeName="transform" type="scale"
+               values="0;1.2;1" 
+               keyTimes="0;0.15;0.3"
+               dur="{ANIMATION_DURATION}s" 
+               begin="{delay_factor}s"
+               repeatCount="indefinite"
+               additive="sum"/>
     </rect>
   </g>
 '''
 
-# Maintenant animer les cellules originales
+# Pour les cellules avec des contributions, ajouter un effet de pulsation
 for cell in all_cells:
-    if cell["original_count"] > 0:
+    if cell["count"] > 0:
         x_pos = cell["x"] * (CELL_SIZE + CELL_SPACING) + 40
         y_pos = cell["y"] * (CELL_SIZE + CELL_SPACING) + 10
-        color_level = get_color_level(cell["original_count"])
-        delay = (cell["x"] + cell["y"]) * ANIMATION_DELAY_FACTOR + 1  # Délai après apparition initiale
+        color_level = get_color_level(cell["count"])
+        
+        # Calculer un décalage pour la pulsation basé sur le nombre de contributions
+        pulse_delay = cell["count"] % 5 * 0.1
         
         svg += f'''
-  <rect id="original-{cell["x"]}-{cell["y"]}" 
-        x="{x_pos}" y="{y_pos}" 
-        width="{CELL_SIZE}" height="{CELL_SIZE}"
-        rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}" 
-        class="contribution-{color_level} cell-original">
+  <circle id="pulse-{cell["x"]}-{cell["y"]}" 
+          cx="{x_pos + CELL_SIZE/2}" cy="{y_pos + CELL_SIZE/2}" r="{CELL_SIZE/1.5}"
+          class="contribution-{color_level}" opacity="0">
     <animate attributeName="opacity" 
-             from="0" to="1" 
-             dur="0.5s" 
-             begin="{delay}s" 
-             fill="freeze"/>
-  </rect>
+             values="0;0.7;0" 
+             dur="{PULSE_DURATION * 3}s" 
+             begin="{ANIMATION_DURATION * 0.2 + pulse_delay}s"
+             repeatCount="indefinite"/>
+    <animate attributeName="r" 
+             values="{CELL_SIZE/2};{CELL_SIZE*1.5};{CELL_SIZE*2.5}" 
+             dur="{PULSE_DURATION * 3}s" 
+             begin="{ANIMATION_DURATION * 0.2 + pulse_delay}s"
+             repeatCount="indefinite"/>
+  </circle>
 '''
 
-# Animer les propagations
-for iteration_index, iteration_cells in enumerate(expansion_iterations):
-    iteration_delay = EXPANSION_DELAY * (iteration_index + 1) + 2  # Délai après les cellules originales
-    
-    for prop in iteration_cells:
-        x_pos = prop["x"] * (CELL_SIZE + CELL_SPACING) + 40
-        y_pos = prop["y"] * (CELL_SIZE + CELL_SPACING) + 10
-        color_level = get_color_level(prop["count"])
-        
-        # Réduire l'opacité pour chaque itération pour l'effet de dégradé
-        opacity = 0.8 / (prop["iteration"])
-        
-        svg += f'''
-  <rect id="prop-{iteration_index}-{prop["x"]}-{prop["y"]}" 
-        x="{x_pos}" y="{y_pos}" 
-        width="{CELL_SIZE}" height="{CELL_SIZE}"
-        rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}" 
-        class="contribution-{color_level}">
-    <animate attributeName="opacity" 
-             from="0" to="{opacity}" 
-             dur="0.8s" 
-             begin="{iteration_delay}s" 
-             fill="freeze"/>
-  </rect>
+svg += '''
+  </g>
 '''
 
 # Ajouter les jours de la semaine sur le côté
 days = ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
 for i, day in enumerate(days):
-    if i <= max_y:  # S'assurer qu'on n'ajoute que les jours nécessaires
+    if i <= max_y:
         svg += f'''
   <text x="10" y="{i * (CELL_SIZE + CELL_SPACING) + 19}" 
-        font-family="Arial" font-size="9" fill="#7a7a7a">{day}</text>
+        font-family="Arial" font-size="9" class="contribution-text">{day}</text>
 '''
 
 # Ajouter des mois en haut
@@ -253,7 +217,7 @@ for i, month in enumerate(months):
         x_pos = month_positions[i] * (CELL_SIZE + CELL_SPACING) + 40
         svg += f'''
   <text x="{x_pos}" y="8" 
-        font-family="Arial" font-size="9" fill="#7a7a7a">{month}</text>
+        font-family="Arial" font-size="9" class="contribution-text">{month}</text>
 '''
 
 # Ajouter légende en bas
@@ -261,7 +225,7 @@ legend_x = SVG_WIDTH - 250
 legend_y = SVG_HEIGHT - 25
 svg += f'''
   <g transform="translate({legend_x}, {legend_y})">
-    <text font-family="Arial" font-size="9" fill="#7a7a7a">Moins</text>
+    <text font-family="Arial" font-size="9" class="contribution-text">Moins</text>
 '''
 
 for i in range(5):
@@ -271,8 +235,18 @@ for i in range(5):
 '''
 
 svg += f'''
-    <text x="{30 + 5 * 15 + 5}" y="0" font-family="Arial" font-size="9" fill="#7a7a7a">Plus</text>
+    <text x="{30 + 5 * 15 + 5}" y="0" font-family="Arial" font-size="9" class="contribution-text">Plus</text>
   </g>
+'''
+
+# Ajouter un titre animé
+svg += f'''
+  <text x="50%" y="95%" 
+        text-anchor="middle" font-family="Arial" font-weight="bold" font-size="11" 
+        class="contribution-text">
+    Contribution Activity
+    <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+  </text>
 '''
 
 svg += "</svg>"
@@ -280,4 +254,4 @@ svg += "</svg>"
 with open("contribution_animation.svg", "w") as f:
     f.write(svg)
 
-print("✅ SVG animé généré avec effet de propagation des contributions !")
+print("✅ SVG animé généré avec effets originaux et répétition automatique !")
