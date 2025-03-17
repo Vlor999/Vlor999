@@ -23,7 +23,7 @@ query = """
 """ % GITHUB_USERNAME
 
 headers = {
-    "Authorization": f"Bearer {GITHUB_TOKEN}",
+    "Authorization": f"Bearer {TOKEN_GH}",
     "Content-Type": "application/json",
 }
 

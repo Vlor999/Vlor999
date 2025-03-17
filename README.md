@@ -87,3 +87,6 @@
 <p align="center">
   <a href="https://icons8.com/icon/3cCrxzZF7LfB/swiftui">SwiftUI</a> icon by <a href="https://icons8.com">Icons8</a>
 </p>
+
+![Animation des contributions](https://raw.githubusercontent.com/Vlor999/Vlor999/main/contribution_animation.svg)
+
