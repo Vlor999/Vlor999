@@ -25,4 +25,4 @@ jobs:
       - name: Fetch contributions
         env:
           TOKEN_GH: ${{ secrets.TOKEN_GH }}
-        run: python /Users/adnet/Desktop/Projets/Perso/ghPage/Vlor999/fetch_contributions.py
+        run: python fetch_contributions.py
