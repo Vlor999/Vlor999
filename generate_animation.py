@@ -25,8 +25,9 @@ for i, week in enumerate(weeks):
 # Générer le SVG
 SVG_WIDTH, SVG_HEIGHT = 800, 150
 CELL_SIZE = 10
-CELL_SPACING = 2
-ANIMATION_DURATION = 3  # secondes
+CELL_SPACING = 3
+ANIMATION_DURATION = 5  # secondes
+BORDER_RADIUS = 2
 
 svg = f'''
 <svg width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" xmlns="http://www.w3.org/2000/svg">
@@ -34,8 +35,8 @@ svg = f'''
     .background-light {{ fill: #ffffff; }}
     .background-dark {{ fill: #0d1117; }}
   </style>
-  <rect width="100%" height="100%" class="background-light" />
-  <rect width="100%" height="100%" class="background-dark" />
+  <rect width="100%" height="100%" class="background-light" rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}"/>
+  <rect width="100%" height="100%" class="background-dark" rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}"/>
 '''
 
 for cell in cells:
@@ -46,7 +47,7 @@ for cell in cells:
 
     svg += f'''
     <rect x="{cell["x"] * (CELL_SIZE + CELL_SPACING)}" y="{cell["y"] * (CELL_SIZE + CELL_SPACING)}" width="{CELL_SIZE}" height="{CELL_SIZE}"
-          fill="{color}">
+          fill="{color}" rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}">
         <animate attributeName="opacity" from="0" to="1" dur="{ANIMATION_DURATION}s" begin="{delay}s" repeatCount="indefinite" fill="freeze"/>
     </rect>
     '''
