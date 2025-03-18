@@ -6,10 +6,13 @@ on:
       - main
   schedule:
     - cron: '0 0 * * *'
+  workflow_dispatch:  # Allow manual trigger
 
 jobs:
   fetch-contributions:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Explicitly grant write permission to repository contents
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -34,8 +37,8 @@ jobs:
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          git add contribution_animation.svg
-          git commit -m "Update contribution animation"
+          git add -f contribution_animation.svg
+          git commit -m "Update contribution animation [skip ci]"
           git push
         env:
           TOKEN_GH: ${{ secrets.GITHUB_TOKEN }}
