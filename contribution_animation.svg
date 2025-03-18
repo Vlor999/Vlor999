@@ -6884,7 +6884,7 @@
   <g>
     <rect id="cell-light-104" 
           class="light-mode"
-          x="820" y="40" 
+          x="655" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -6896,7 +6896,7 @@
     </rect>
     <rect id="cell-dark-104" 
           class="dark-mode"
-          x="820" y="40" 
+          x="655" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -6911,7 +6911,7 @@
   <g>
     <rect id="cell-light-105" 
           class="light-mode"
-          x="655" y="85" 
+          x="820" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -6923,7 +6923,7 @@
     </rect>
     <rect id="cell-dark-105" 
           class="dark-mode"
-          x="655" y="85" 
+          x="820" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -6983,17 +6983,4 @@
     </linearGradient>
 
   </defs>
-
-  <rect width="100%" height="100%" fill="none" stroke="#4a9eff" stroke-width="2" rx="6" ry="6">
-    <animate attributeName="opacity"
-             values="0;0;0.4;0" 
-             keyTimes="0;0.7733333333333334;0.8400000000000001;0.9066666666666667"
-             dur="15s"
-             repeatCount="indefinite"/>
-    <animate attributeName="stroke-width"
-             values="1;1;3;1" 
-             keyTimes="0;0.7733333333333334;0.8400000000000001;0.9066666666666667"
-             dur="15s"
-             repeatCount="indefinite"/>
-  </rect>
 </svg>
