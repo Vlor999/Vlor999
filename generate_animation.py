@@ -48,7 +48,7 @@ GITHUB_COLORS = [
 
 # Version dark mode
 GITHUB_COLORS_DARK = [
-    "#161b22",  # 0 contributions
+    "#2d333b",  # 0 contributions - changed from #161b22 to be lighter
     "#0e4429",  # 1-3 contributions
     "#006d32",  # 4-7 contributions
     "#26a641",  # 8-12 contributions
@@ -152,10 +152,17 @@ svg += '''
 '''
 
 for i in range(5):
+    light_color = GITHUB_COLORS[i]
+    dark_color = GITHUB_COLORS_DARK[i]
+    
     svg += f'''
     <linearGradient id="grad{i}" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:{GITHUB_COLORS[i]};stop-opacity:0.8" />
-      <stop offset="100%" style="stop-color:{GITHUB_COLORS[i]};stop-opacity:1" />
+      <stop offset="0%" style="stop-color:{light_color};stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:{light_color};stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="darkgrad{i}" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:{dark_color};stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:{dark_color};stop-opacity:1" />
     </linearGradient>
 '''
 
