@@ -99,12 +99,11 @@ svg = f'''
   <!-- Fond -->
   <rect width="100%" height="100%" class="background" rx="6" ry="6"/>
   
-  <!-- Animation cyclique principale -->
-  <animate id="mainCycle" 
-           attributeName="visibility" 
-           values="visible;visible" 
+  <!-- Animation principale (animation sans fin) -->
+  <animate id="masterTiming" 
+           attributeName="opacity" 
+           values="1;1"
            dur="15s" 
-           begin="0s;mainCycle.end"
            repeatCount="indefinite"/>
 '''
 
@@ -140,6 +139,7 @@ for idx, cell in enumerate(contributing_cells):
     
     # Animation séquentielle basée sur l'index
     delay = idx * 0.1  # Délai progressif
+    reset_delay = (total_cells + 5) * 0.1  # Délai avant reset
     
     # Utiliser des groupes séparés pour les modes clair et sombre
     svg += f'''
@@ -150,18 +150,11 @@ for idx, cell in enumerate(contributing_cells):
           width="{CELL_SIZE}" height="{CELL_SIZE}"
           rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}"
           fill="{GITHUB_COLORS[color_level]}" opacity="0">
-      <animate attributeName="opacity" 
-               values="0;1" 
-               dur="0.5s" 
-               begin="mainCycle.begin+{delay}s" 
-               fill="freeze"
-               restart="whenNotActive"/>
-      <animate attributeName="opacity" 
-               values="1;0" 
-               dur="0.2s" 
-               begin="mainCycle.end-0.5s" 
-               fill="freeze"
-               restart="whenNotActive"/>
+      <animate attributeName="opacity"
+               values="0;0;1;1;0" 
+               keyTimes="0;{delay/15};{(delay+0.5)/15};{(15-1.5)/15};1"
+               dur="15s"
+               repeatCount="indefinite"/>
     </rect>
     <rect id="cell-dark-{idx}" 
           class="dark-mode"
@@ -169,18 +162,11 @@ for idx, cell in enumerate(contributing_cells):
           width="{CELL_SIZE}" height="{CELL_SIZE}"
           rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}"
           fill="{GITHUB_COLORS_DARK[color_level]}" opacity="0">
-      <animate attributeName="opacity" 
-               values="0;1" 
-               dur="0.5s" 
-               begin="mainCycle.begin+{delay}s" 
-               fill="freeze"
-               restart="whenNotActive"/>
-      <animate attributeName="opacity" 
-               values="1;0" 
-               dur="0.2s" 
-               begin="mainCycle.end-0.5s" 
-               fill="freeze"
-               restart="whenNotActive"/>
+      <animate attributeName="opacity"
+               values="0;0;1;1;0" 
+               keyTimes="0;{delay/15};{(delay+0.5)/15};{(15-1.5)/15};1"
+               dur="15s"
+               repeatCount="indefinite"/>
     </rect>
   </g>
 '''
@@ -211,17 +197,17 @@ svg += '''
 
 # Ajouter un effet de balayage lumineux à la fin de l'animation
 svg += f'''
-  <rect width="100%" height="100%" fill="none" stroke="#4a9eff" stroke-width="2" rx="6" ry="6" opacity="0">
-    <animate attributeName="opacity" 
-             values="0;0.4;0" 
-             dur="2s" 
-             begin="mainCycle.begin+{total_cells * 0.1 + 1}s" 
-             fill="remove"/>
-    <animate attributeName="stroke-width" 
-             values="1;3;1" 
-             dur="2s" 
-             begin="mainCycle.begin+{total_cells * 0.1 + 1}s" 
-             fill="remove"/>
+  <rect width="100%" height="100%" fill="none" stroke="#4a9eff" stroke-width="2" rx="6" ry="6">
+    <animate attributeName="opacity"
+             values="0;0;0.4;0" 
+             keyTimes="0;{(total_cells*0.1+1)/15};{(total_cells*0.1+2)/15};{(total_cells*0.1+3)/15}"
+             dur="15s"
+             repeatCount="indefinite"/>
+    <animate attributeName="stroke-width"
+             values="1;1;3;1" 
+             keyTimes="0;{(total_cells*0.1+1)/15};{(total_cells*0.1+2)/15};{(total_cells*0.1+3)/15}"
+             dur="15s"
+             repeatCount="indefinite"/>
   </rect>
 '''
 
