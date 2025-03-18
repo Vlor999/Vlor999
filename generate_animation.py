@@ -195,21 +195,8 @@ svg += '''
   </defs>
 '''
 
-# Ajouter un effet de balayage lumineux à la fin de l'animation
-svg += f'''
-  <rect width="100%" height="100%" fill="none" stroke="#4a9eff" stroke-width="2" rx="6" ry="6">
-    <animate attributeName="opacity"
-             values="0;0;0.4;0" 
-             keyTimes="0;{(total_cells*0.1+1)/15};{(total_cells*0.1+2)/15};{(total_cells*0.1+3)/15}"
-             dur="15s"
-             repeatCount="indefinite"/>
-    <animate attributeName="stroke-width"
-             values="1;1;3;1" 
-             keyTimes="0;{(total_cells*0.1+1)/15};{(total_cells*0.1+2)/15};{(total_cells*0.1+3)/15}"
-             dur="15s"
-             repeatCount="indefinite"/>
-  </rect>
-'''
+# Remove the blue border effect
+# No more blue border effect here
 
 # Fermer le SVG
 svg += '</svg>'
