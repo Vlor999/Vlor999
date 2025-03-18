@@ -48,7 +48,7 @@ GITHUB_COLORS = [
 
 # Version dark mode
 GITHUB_COLORS_DARK = [
-    "#2d333b",  # 0 contributions - changed from #161b22 to be lighter
+    "#2d333b",  # 0 contributions - lighter gray for empty cells
     "#0e4429",  # 1-3 contributions
     "#006d32",  # 4-7 contributions
     "#26a641",  # 8-12 contributions
@@ -67,6 +67,7 @@ def get_color_level(count):
     else:
         return 4
 
+# Créer le SVG avec une meilleure gestion des modes clair/sombre
 svg = f'''
 <svg width="{SVG_WIDTH}" height="{SVG_HEIGHT}" viewBox="0 0 {SVG_WIDTH} {SVG_HEIGHT}" 
      xmlns="http://www.w3.org/2000/svg">
@@ -79,6 +80,8 @@ svg = f'''
       .contribution-3 {{ fill: {GITHUB_COLORS[3]}; }}
       .contribution-4 {{ fill: {GITHUB_COLORS[4]}; }}
       .contribution-text {{ fill: #24292f; }}
+      .light-mode {{ display: inline; }}
+      .dark-mode {{ display: none; }}
     }}
     @media (prefers-color-scheme: dark) {{
       .background {{ fill: #0d1117; }}
@@ -88,18 +91,20 @@ svg = f'''
       .contribution-3 {{ fill: {GITHUB_COLORS_DARK[3]}; }}
       .contribution-4 {{ fill: {GITHUB_COLORS_DARK[4]}; }}
       .contribution-text {{ fill: #8b949e; }}
+      .light-mode {{ display: none; }}
+      .dark-mode {{ display: inline; }}
     }}
   </style>
   
   <!-- Fond -->
   <rect width="100%" height="100%" class="background" rx="6" ry="6"/>
   
-  <!-- Animation globale -->
-  <animate id="masterAnimation" 
-           attributeName="opacity" 
-           values="1;1" 
-           dur="12s" 
-           begin="0s"
+  <!-- Animation cyclique principale -->
+  <animate id="mainCycle" 
+           attributeName="visibility" 
+           values="visible;visible" 
+           dur="15s" 
+           begin="0s;mainCycle.end"
            repeatCount="indefinite"/>
 '''
 
@@ -112,11 +117,18 @@ for cell in all_cells:
     x_pos = cell["x"] * (CELL_SIZE + CELL_SPACING) + 40
     y_pos = cell["y"] * (CELL_SIZE + CELL_SPACING) + 10
     
+    # Explicitement définir les couleurs pour chaque mode plutôt que d'utiliser une classe
     svg += f'''
-  <rect x="{x_pos}" y="{y_pos}" 
-        width="{CELL_SIZE}" height="{CELL_SIZE}"
-        rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}" 
-        class="contribution-0"/>
+  <g>
+    <rect class="light-mode" x="{x_pos}" y="{y_pos}" 
+          width="{CELL_SIZE}" height="{CELL_SIZE}"
+          rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}" 
+          fill="{GITHUB_COLORS[0]}"/>
+    <rect class="dark-mode" x="{x_pos}" y="{y_pos}" 
+          width="{CELL_SIZE}" height="{CELL_SIZE}"
+          rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}" 
+          fill="{GITHUB_COLORS_DARK[0]}"/>
+  </g>
 '''
 
 # Animer les cellules avec des contributions
@@ -129,21 +141,48 @@ for idx, cell in enumerate(contributing_cells):
     # Animation séquentielle basée sur l'index
     delay = idx * 0.1  # Délai progressif
     
+    # Utiliser des groupes séparés pour les modes clair et sombre
     svg += f'''
-  <rect x="{x_pos}" y="{y_pos}" 
-        width="{CELL_SIZE}" height="{CELL_SIZE}"
-        rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}">
-    <animate attributeName="fill" 
-             from="url(#grad{color_level})" to="{GITHUB_COLORS[color_level]}" 
-             dur="0.5s" 
-             begin="{delay}s;masterAnimation.end+{delay}s"
-             fill="freeze"/>
-    <animate attributeName="opacity" 
-             values="0;1" 
-             dur="0.5s" 
-             begin="{delay}s;masterAnimation.end+{delay}s"
-             fill="freeze"/>
-  </rect>
+  <g>
+    <rect id="cell-light-{idx}" 
+          class="light-mode"
+          x="{x_pos}" y="{y_pos}" 
+          width="{CELL_SIZE}" height="{CELL_SIZE}"
+          rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}"
+          fill="{GITHUB_COLORS[color_level]}" opacity="0">
+      <animate attributeName="opacity" 
+               values="0;1" 
+               dur="0.5s" 
+               begin="mainCycle.begin+{delay}s" 
+               fill="freeze"
+               restart="whenNotActive"/>
+      <animate attributeName="opacity" 
+               values="1;0" 
+               dur="0.2s" 
+               begin="mainCycle.end-0.5s" 
+               fill="freeze"
+               restart="whenNotActive"/>
+    </rect>
+    <rect id="cell-dark-{idx}" 
+          class="dark-mode"
+          x="{x_pos}" y="{y_pos}" 
+          width="{CELL_SIZE}" height="{CELL_SIZE}"
+          rx="{BORDER_RADIUS}" ry="{BORDER_RADIUS}"
+          fill="{GITHUB_COLORS_DARK[color_level]}" opacity="0">
+      <animate attributeName="opacity" 
+               values="0;1" 
+               dur="0.5s" 
+               begin="mainCycle.begin+{delay}s" 
+               fill="freeze"
+               restart="whenNotActive"/>
+      <animate attributeName="opacity" 
+               values="1;0" 
+               dur="0.2s" 
+               begin="mainCycle.end-0.5s" 
+               fill="freeze"
+               restart="whenNotActive"/>
+    </rect>
+  </g>
 '''
 
 # Ajouter des dégradés pour les effets visuels
@@ -170,19 +209,19 @@ svg += '''
   </defs>
 '''
 
-# Ajouter un effet qui se répète après l'apparition de toutes les cellules
+# Ajouter un effet de balayage lumineux à la fin de l'animation
 svg += f'''
   <rect width="100%" height="100%" fill="none" stroke="#4a9eff" stroke-width="2" rx="6" ry="6" opacity="0">
     <animate attributeName="opacity" 
              values="0;0.4;0" 
-             dur="3s" 
-             begin="{total_cells * 0.1 + 1}s;masterAnimation.end+{total_cells * 0.1 + 1}s" 
-             repeatCount="1"/>
+             dur="2s" 
+             begin="mainCycle.begin+{total_cells * 0.1 + 1}s" 
+             fill="remove"/>
     <animate attributeName="stroke-width" 
              values="1;3;1" 
-             dur="3s" 
-             begin="{total_cells * 0.1 + 1}s;masterAnimation.end+{total_cells * 0.1 + 1}s" 
-             repeatCount="1"/>
+             dur="2s" 
+             begin="mainCycle.begin+{total_cells * 0.1 + 1}s" 
+             fill="remove"/>
   </rect>
 '''
 
@@ -192,4 +231,4 @@ svg += '</svg>'
 with open("contribution_animation.svg", "w") as f:
     f.write(svg)
 
-print("✅ SVG animé généré avec une animation séquentielle simplifiée!")
+print("✅ SVG animé généré avec cycle d'animation corrigé!")
