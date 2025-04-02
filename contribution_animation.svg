@@ -4074,6 +4074,17 @@
   </g>
 
   <g>
+    <rect class="light-mode" x="820" y="55" 
+          width="12" height="12"
+          rx="2" ry="2" 
+          fill="#ebedf0"/>
+    <rect class="dark-mode" x="820" y="55" 
+          width="12" height="12"
+          rx="2" ry="2" 
+          fill="#2d333b"/>
+  </g>
+
+  <g>
     <rect id="cell-light-0" 
           class="light-mode"
           x="115" y="55" 
@@ -6425,10 +6436,10 @@
   <g>
     <rect id="cell-light-87" 
           class="light-mode"
-          x="820" y="25" 
+          x="130" y="10" 
           width="12" height="12"
           rx="2" ry="2"
-          fill="#40c463" opacity="0">
+          fill="#30a14e" opacity="0">
       <animate attributeName="opacity"
                values="0;0;1;1;0" 
                keyTimes="0;0.5800000000000001;0.6133333333333334;0.9;1"
@@ -6437,10 +6448,10 @@
     </rect>
     <rect id="cell-dark-87" 
           class="dark-mode"
-          x="820" y="25" 
+          x="130" y="10" 
           width="12" height="12"
           rx="2" ry="2"
-          fill="#006d32" opacity="0">
+          fill="#26a641" opacity="0">
       <animate attributeName="opacity"
                values="0;0;1;1;0" 
                keyTimes="0;0.5800000000000001;0.6133333333333334;0.9;1"
@@ -6452,7 +6463,7 @@
   <g>
     <rect id="cell-light-88" 
           class="light-mode"
-          x="130" y="10" 
+          x="520" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6464,7 +6475,7 @@
     </rect>
     <rect id="cell-dark-88" 
           class="dark-mode"
-          x="130" y="10" 
+          x="520" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6479,7 +6490,7 @@
   <g>
     <rect id="cell-light-89" 
           class="light-mode"
-          x="520" y="40" 
+          x="520" y="55" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6491,7 +6502,7 @@
     </rect>
     <rect id="cell-dark-89" 
           class="dark-mode"
-          x="520" y="40" 
+          x="520" y="55" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6506,7 +6517,7 @@
   <g>
     <rect id="cell-light-90" 
           class="light-mode"
-          x="520" y="55" 
+          x="550" y="10" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6518,7 +6529,7 @@
     </rect>
     <rect id="cell-dark-90" 
           class="dark-mode"
-          x="520" y="55" 
+          x="550" y="10" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6533,7 +6544,7 @@
   <g>
     <rect id="cell-light-91" 
           class="light-mode"
-          x="550" y="10" 
+          x="805" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6545,7 +6556,7 @@
     </rect>
     <rect id="cell-dark-91" 
           class="dark-mode"
-          x="550" y="10" 
+          x="805" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6560,7 +6571,7 @@
   <g>
     <rect id="cell-light-92" 
           class="light-mode"
-          x="805" y="40" 
+          x="175" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6572,7 +6583,7 @@
     </rect>
     <rect id="cell-dark-92" 
           class="dark-mode"
-          x="805" y="40" 
+          x="175" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6587,7 +6598,7 @@
   <g>
     <rect id="cell-light-93" 
           class="light-mode"
-          x="175" y="25" 
+          x="535" y="70" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6599,7 +6610,7 @@
     </rect>
     <rect id="cell-dark-93" 
           class="dark-mode"
-          x="175" y="25" 
+          x="535" y="70" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6614,7 +6625,7 @@
   <g>
     <rect id="cell-light-94" 
           class="light-mode"
-          x="535" y="70" 
+          x="550" y="55" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6626,7 +6637,7 @@
     </rect>
     <rect id="cell-dark-94" 
           class="dark-mode"
-          x="535" y="70" 
+          x="550" y="55" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6641,7 +6652,7 @@
   <g>
     <rect id="cell-light-95" 
           class="light-mode"
-          x="550" y="55" 
+          x="745" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6653,7 +6664,7 @@
     </rect>
     <rect id="cell-dark-95" 
           class="dark-mode"
-          x="550" y="55" 
+          x="745" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6668,7 +6679,7 @@
   <g>
     <rect id="cell-light-96" 
           class="light-mode"
-          x="745" y="85" 
+          x="790" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6680,7 +6691,7 @@
     </rect>
     <rect id="cell-dark-96" 
           class="dark-mode"
-          x="745" y="85" 
+          x="790" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6695,7 +6706,7 @@
   <g>
     <rect id="cell-light-97" 
           class="light-mode"
-          x="790" y="25" 
+          x="820" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6707,7 +6718,7 @@
     </rect>
     <rect id="cell-dark-97" 
           class="dark-mode"
-          x="790" y="25" 
+          x="820" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6830,7 +6841,7 @@
   <g>
     <rect id="cell-light-102" 
           class="light-mode"
-          x="115" y="40" 
+          x="820" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6842,7 +6853,7 @@
     </rect>
     <rect id="cell-dark-102" 
           class="dark-mode"
-          x="115" y="40" 
+          x="820" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6857,7 +6868,7 @@
   <g>
     <rect id="cell-light-103" 
           class="light-mode"
-          x="160" y="10" 
+          x="115" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6869,7 +6880,7 @@
     </rect>
     <rect id="cell-dark-103" 
           class="dark-mode"
-          x="160" y="10" 
+          x="115" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6884,7 +6895,7 @@
   <g>
     <rect id="cell-light-104" 
           class="light-mode"
-          x="100" y="40" 
+          x="160" y="10" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6896,7 +6907,7 @@
     </rect>
     <rect id="cell-dark-104" 
           class="dark-mode"
-          x="100" y="40" 
+          x="160" y="10" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6911,7 +6922,7 @@
   <g>
     <rect id="cell-light-105" 
           class="light-mode"
-          x="100" y="70" 
+          x="100" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6923,7 +6934,7 @@
     </rect>
     <rect id="cell-dark-105" 
           class="dark-mode"
-          x="100" y="70" 
+          x="100" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6938,7 +6949,7 @@
   <g>
     <rect id="cell-light-106" 
           class="light-mode"
-          x="145" y="85" 
+          x="100" y="70" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6950,7 +6961,7 @@
     </rect>
     <rect id="cell-dark-106" 
           class="dark-mode"
-          x="145" y="85" 
+          x="100" y="70" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6965,7 +6976,7 @@
   <g>
     <rect id="cell-light-107" 
           class="light-mode"
-          x="775" y="10" 
+          x="145" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#30a14e" opacity="0">
@@ -6977,7 +6988,7 @@
     </rect>
     <rect id="cell-dark-107" 
           class="dark-mode"
-          x="775" y="10" 
+          x="145" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#26a641" opacity="0">
@@ -6992,10 +7003,10 @@
   <g>
     <rect id="cell-light-108" 
           class="light-mode"
-          x="130" y="100" 
+          x="775" y="10" 
           width="12" height="12"
           rx="2" ry="2"
-          fill="#216e39" opacity="0">
+          fill="#30a14e" opacity="0">
       <animate attributeName="opacity"
                values="0;0;1;1;0" 
                keyTimes="0;0.7200000000000001;0.7533333333333334;0.9;1"
@@ -7004,10 +7015,10 @@
     </rect>
     <rect id="cell-dark-108" 
           class="dark-mode"
-          x="130" y="100" 
+          x="775" y="10" 
           width="12" height="12"
           rx="2" ry="2"
-          fill="#39d353" opacity="0">
+          fill="#26a641" opacity="0">
       <animate attributeName="opacity"
                values="0;0;1;1;0" 
                keyTimes="0;0.7200000000000001;0.7533333333333334;0.9;1"
@@ -7019,7 +7030,7 @@
   <g>
     <rect id="cell-light-109" 
           class="light-mode"
-          x="805" y="100" 
+          x="130" y="100" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7031,7 +7042,7 @@
     </rect>
     <rect id="cell-dark-109" 
           class="dark-mode"
-          x="805" y="100" 
+          x="130" y="100" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7046,7 +7057,7 @@
   <g>
     <rect id="cell-light-110" 
           class="light-mode"
-          x="100" y="55" 
+          x="805" y="100" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7058,7 +7069,7 @@
     </rect>
     <rect id="cell-dark-110" 
           class="dark-mode"
-          x="100" y="55" 
+          x="805" y="100" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7073,7 +7084,7 @@
   <g>
     <rect id="cell-light-111" 
           class="light-mode"
-          x="145" y="40" 
+          x="100" y="55" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7085,7 +7096,7 @@
     </rect>
     <rect id="cell-dark-111" 
           class="dark-mode"
-          x="145" y="40" 
+          x="100" y="55" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7100,7 +7111,7 @@
   <g>
     <rect id="cell-light-112" 
           class="light-mode"
-          x="565" y="25" 
+          x="145" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7112,7 +7123,7 @@
     </rect>
     <rect id="cell-dark-112" 
           class="dark-mode"
-          x="565" y="25" 
+          x="145" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7127,7 +7138,7 @@
   <g>
     <rect id="cell-light-113" 
           class="light-mode"
-          x="760" y="10" 
+          x="565" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7139,7 +7150,7 @@
     </rect>
     <rect id="cell-dark-113" 
           class="dark-mode"
-          x="760" y="10" 
+          x="565" y="25" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7154,7 +7165,7 @@
   <g>
     <rect id="cell-light-114" 
           class="light-mode"
-          x="625" y="85" 
+          x="760" y="10" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7166,7 +7177,7 @@
     </rect>
     <rect id="cell-dark-114" 
           class="dark-mode"
-          x="625" y="85" 
+          x="760" y="10" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7181,7 +7192,7 @@
   <g>
     <rect id="cell-light-115" 
           class="light-mode"
-          x="805" y="70" 
+          x="625" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7193,7 +7204,7 @@
     </rect>
     <rect id="cell-dark-115" 
           class="dark-mode"
-          x="805" y="70" 
+          x="625" y="85" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7208,7 +7219,7 @@
   <g>
     <rect id="cell-light-116" 
           class="light-mode"
-          x="790" y="40" 
+          x="805" y="70" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7220,7 +7231,7 @@
     </rect>
     <rect id="cell-dark-116" 
           class="dark-mode"
-          x="790" y="40" 
+          x="805" y="70" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
@@ -7235,7 +7246,7 @@
   <g>
     <rect id="cell-light-117" 
           class="light-mode"
-          x="805" y="25" 
+          x="790" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#216e39" opacity="0">
@@ -7247,13 +7258,40 @@
     </rect>
     <rect id="cell-dark-117" 
           class="dark-mode"
-          x="805" y="25" 
+          x="790" y="40" 
           width="12" height="12"
           rx="2" ry="2"
           fill="#39d353" opacity="0">
       <animate attributeName="opacity"
                values="0;0;1;1;0" 
                keyTimes="0;0.78;0.8133333333333334;0.9;1"
+               dur="15s"
+               repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g>
+    <rect id="cell-light-118" 
+          class="light-mode"
+          x="805" y="25" 
+          width="12" height="12"
+          rx="2" ry="2"
+          fill="#216e39" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0" 
+               keyTimes="0;0.7866666666666667;0.8200000000000001;0.9;1"
+               dur="15s"
+               repeatCount="indefinite"/>
+    </rect>
+    <rect id="cell-dark-118" 
+          class="dark-mode"
+          x="805" y="25" 
+          width="12" height="12"
+          rx="2" ry="2"
+          fill="#39d353" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0" 
+               keyTimes="0;0.7866666666666667;0.8200000000000001;0.9;1"
                dur="15s"
                repeatCount="indefinite"/>
     </rect>
