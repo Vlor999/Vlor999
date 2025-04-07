@@ -23,6 +23,7 @@
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="C++" width="42" height="42"/>
     </picture>
   </a>
+
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" />
@@ -92,6 +93,9 @@
       <source media="(prefers-color-scheme: light)" srcset="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" />
       <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Git" width="42" height="42"/>
     </picture>
+  </a>
+  <a href="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ci_cd.png">
+    <img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ci_cd.png" alt="CI/CD" title="CI/CD"/>
   </a>
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/notion/notion-original.svg">
     <picture>
