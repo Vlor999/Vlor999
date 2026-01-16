@@ -25,25 +25,46 @@
   </a>
 
 
-  <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" />
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" alt="Swift" width="42" height="42"/>
-    </picture>
-  </a>
-  <a href="https://developer.apple.com/xcode/swiftui/">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="icons8-swiftui.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="icons8-swiftui.svg" />
-      <img src="icons8-swiftui.svg" alt="SwiftUI" width="42" height="42"/>
-    </picture>
-  </a>
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" />
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="Python" width="42" height="42"/>
+    </picture>
+  </a>
+  <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" alt="Pandas" width="42" height="42"/>
+    </picture>
+  </a>
+  <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pytorch/pytorch-original.svg" alt="PyTorch" width="42" height="42"/>
+    </picture>
+  </a>
+   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://www.vectorlogo.zone/logos/onnxai/onnxai-icon.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://www.vectorlogo.zone/logos/onnxai/onnxai-icon.svg" />
+      <img src="https://www.vectorlogo.zone/logos/onnxai/onnxai-icon.svg" alt="PyTorch" width="42" height="42"/>
+    </picture>
+  </a>
+  <a href="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" />
+      <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="42" height="42"/>
+    </picture>
+  </a>
+  <a href="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" />
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/numpy/numpy-original.svg" alt="NumPy" width="42" height="42"/>
     </picture>
   </a>
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
@@ -53,11 +74,11 @@
       <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg" alt="Java" width="42" height="42"/>
     </picture>
   </a>
-  <a href="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg">
+  <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg">
     <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" />
-      <img src="https://www.vectorlogo.zone/logos/opencv/opencv-icon.svg" alt="OpenCV" width="42" height="42"/>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" />
+      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/swift/swift-original.svg" alt="Swift" width="42" height="42"/>
     </picture>
   </a>
   <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg">
@@ -98,20 +119,6 @@
   <a href="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ci_cd.png">
     <img width="50" src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/ci_cd.png" alt="CI/CD" title="CI/CD"/>
   </a>
-  <a href="https://raw.githubusercontent.com/devicons/devicon/master/icons/notion/notion-original.svg">
-    <picture>
-      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/notion/notion-original.svg" />
-      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/devicons/devicon/master/icons/notion/notion-original.svg" />
-      <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/notion/notion-original.svg" alt="Notion" width="42" height="42"/>
-    </picture>
-  </a>
-  <a href="https://www.latex-project.org/">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="LATEX-WHITE.svg" />
-    <source media="(prefers-color-scheme: light)" srcset="LATEX-BLACK.svg" />
-    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/latex/latex-original.svg" alt="LaTeX" width="42" height="42"/>
-  </picture>
-</a>
 </p>
 
 <h2 align="center">⚡️ Where to find me</h2>
@@ -149,7 +156,3 @@
   </picture>
 </p>
 
-
-<p align="center">
-  <a href="https://icons8.com/icon/3cCrxzZF7LfB/swiftui">SwiftUI</a> icon by <a href="https://icons8.com">Icons8</a>
-</p>
