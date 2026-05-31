@@ -7,38 +7,6 @@
             {
               "contributionDays": [
                 {
-                  "date": "2025-05-25",
-                  "contributionCount": 4
-                },
-                {
-                  "date": "2025-05-26",
-                  "contributionCount": 2
-                },
-                {
-                  "date": "2025-05-27",
-                  "contributionCount": 6
-                },
-                {
-                  "date": "2025-05-28",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-05-29",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-05-30",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-05-31",
-                  "contributionCount": 0
-                }
-              ]
-            },
-            {
-              "contributionDays": [
-                {
                   "date": "2025-06-01",
                   "contributionCount": 0
                 },
@@ -1548,7 +1516,7 @@
                 },
                 {
                   "date": "2026-04-27",
-                  "contributionCount": 7
+                  "contributionCount": 6
                 },
                 {
                   "date": "2026-04-28",
@@ -1576,7 +1544,7 @@
               "contributionDays": [
                 {
                   "date": "2026-05-03",
-                  "contributionCount": 1
+                  "contributionCount": 4
                 },
                 {
                   "date": "2026-05-04",
@@ -1624,7 +1592,7 @@
                 },
                 {
                   "date": "2026-05-14",
-                  "contributionCount": 1
+                  "contributionCount": 5
                 },
                 {
                   "date": "2026-05-15",
@@ -1696,6 +1664,14 @@
                 },
                 {
                   "date": "2026-05-30",
+                  "contributionCount": 14
+                }
+              ]
+            },
+            {
+              "contributionDays": [
+                {
+                  "date": "2026-05-31",
                   "contributionCount": 0
                 }
               ]
