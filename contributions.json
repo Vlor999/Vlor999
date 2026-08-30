@@ -7,38 +7,6 @@
             {
               "contributionDays": [
                 {
-                  "date": "2025-08-24",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-08-25",
-                  "contributionCount": 1
-                },
-                {
-                  "date": "2025-08-26",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-08-27",
-                  "contributionCount": 1
-                },
-                {
-                  "date": "2025-08-28",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-08-29",
-                  "contributionCount": 0
-                },
-                {
-                  "date": "2025-08-30",
-                  "contributionCount": 0
-                }
-              ]
-            },
-            {
-              "contributionDays": [
-                {
                   "date": "2025-08-31",
                   "contributionCount": 0
                 },
@@ -1696,6 +1664,14 @@
                 },
                 {
                   "date": "2026-08-29",
+                  "contributionCount": 0
+                }
+              ]
+            },
+            {
+              "contributionDays": [
+                {
+                  "date": "2026-08-30",
                   "contributionCount": 0
                 }
               ]
