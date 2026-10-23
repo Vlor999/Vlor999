@@ -33,12 +33,19 @@ jobs:
       - name: Generate animation
         run: python generate_animation.py
 
+      - name: Update age in banner
+        run: |
+          age=$(( $(date +%Y) - 2003 ))
+          [ "$(date +%m%d)" \< 0205 ] && age=$(( age - 1 ))
+          sed -i -E "s/Adnet,\+[0-9]+/Adnet,+$age/" README.md
+
       - name: Commit and push changes
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add -f contribution_animation.svg
           git add -f contributions.json
+          git add README.md
           git commit -m "Update contribution data and animation [skip ci]"
           git push
         env:
