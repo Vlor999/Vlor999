@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=909090FF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet,+22;%F0%9F%93%96+Currently+studying+at+ENSIMAG;%F0%9F%92%BB+Loves+personal+projects;🤩+Open+to+work+into+new+projects" alt="Hi, I'm Willem Adnet"/>
+  <img src="https://readme-typing-svg.herokuapp.com/?font=Fira+Code&pause=800&color=909090FF&center=true&vCenter=true&width=500&height=90&lines=Hi+%F0%9F%91%8B%2C+I'm+Willem+Adnet,+23;%F0%9F%93%96+Currently+studying+at+ENSIMAG;%F0%9F%92%BB+Loves+personal+projects;🤩+Open+to+work+into+new+projects" alt="Hi, I'm Willem Adnet"/>
 </p>
 
 <h2 align="center">🚀 Languages and Tools</h2>
