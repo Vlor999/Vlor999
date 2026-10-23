@@ -4096,6 +4096,17 @@
   </g>
 
   <g>
+    <rect class="light-mode" x="820" y="85" 
+          width="12" height="12"
+          rx="2" ry="2" 
+          fill="#ebedf0"/>
+    <rect class="dark-mode" x="820" y="85" 
+          width="12" height="12"
+          rx="2" ry="2" 
+          fill="#2d333b"/>
+  </g>
+
+  <g>
     <rect id="cell-light-0" 
           class="light-mode"
           x="40" y="10" 
@@ -8977,6 +8988,33 @@
       <animate attributeName="opacity"
                values="0;0;1;1;0" 
                keyTimes="0;1.2;1.2333333333333334;0.9;1"
+               dur="15s"
+               repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <g>
+    <rect id="cell-light-181" 
+          class="light-mode"
+          x="820" y="70" 
+          width="12" height="12"
+          rx="2" ry="2"
+          fill="#216e39" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0" 
+               keyTimes="0;1.2066666666666668;1.24;0.9;1"
+               dur="15s"
+               repeatCount="indefinite"/>
+    </rect>
+    <rect id="cell-dark-181" 
+          class="dark-mode"
+          x="820" y="70" 
+          width="12" height="12"
+          rx="2" ry="2"
+          fill="#39d353" opacity="0">
+      <animate attributeName="opacity"
+               values="0;0;1;1;0" 
+               keyTimes="0;1.2066666666666668;1.24;0.9;1"
                dur="15s"
                repeatCount="indefinite"/>
     </rect>
